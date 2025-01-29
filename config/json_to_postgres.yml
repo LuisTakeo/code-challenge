@@ -1,0 +1,14 @@
+in:
+  type: file
+  path_prefix: /output/combined_orders
+  parser:
+    type: json
+
+out:
+  type: postgresql
+  host: db
+  user: northwind_user
+  password: thewindisblowing
+  database: northwind
+  table: processed_orders
+  mode: replace

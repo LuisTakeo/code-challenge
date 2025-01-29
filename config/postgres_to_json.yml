@@ -1,0 +1,13 @@
+in:
+  type: postgresql
+  host: db
+  user: northwind_user
+  password: thewindisblowing
+  database: northwind
+  query: "SELECT * FROM orders"
+
+out:
+  type: json
+  path_prefix: /output/orders_postgres
+  file_ext: .json
+  newline: true

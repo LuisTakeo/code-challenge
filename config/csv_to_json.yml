@@ -1,0 +1,15 @@
+in:
+  type: file
+  path_prefix: /data/orders.csv
+  parser:
+    type: csv
+    columns:
+      - {name: order_id, type: long}
+      - {name: customer_id, type: long}
+      - {name: order_date, type: timestamp}
+
+out:
+  type: json
+  path_prefix: /output/orders_csv
+  file_ext: .json
+  newline: true
