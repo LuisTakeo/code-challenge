@@ -1,0 +1,6 @@
+{"grantee": "pg_monitor", "role_name": "pg_read_all_settings", "is_grantable": "NO"}
+{"grantee": "pg_monitor", "role_name": "pg_read_all_stats", "is_grantable": "NO"}
+{"grantee": "pg_monitor", "role_name": "pg_stat_scan_tables", "is_grantable": "NO"}
+{"grantee": "pg_monitor", "role_name": "pg_read_all_settings", "is_grantable": "NO"}
+{"grantee": "pg_monitor", "role_name": "pg_read_all_stats", "is_grantable": "NO"}
+{"grantee": "pg_monitor", "role_name": "pg_stat_scan_tables", "is_grantable": "NO"}

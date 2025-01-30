@@ -1,0 +1,56 @@
+version: 1
+default_environment: dev
+project_id: 98af7137-a7f0-40c1-84aa-3a22d8da9a5c
+environments:
+- name: dev
+- name: staging
+- name: prod
+plugins:
+  extractors:
+  - name: tap-postgres
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/tap-postgres.git
+    config:
+      host: localhost
+      port: 5432
+      database: northwind
+      user: northwind_user
+      password: thewindisblowing
+      tables:
+      - name: customers
+      - name: customer_customer_demo
+      - name: customer_demographics
+      - name: employees
+      - name: orders
+      - name: products
+      - name: shippers
+      - name: suppliers
+      - name: order_details
+      - name: categories
+      - name: employee_territories
+      - name: territories
+      - name: region
+      - name: us_states
+
+  - name: tap-csv
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/tap-csv.git
+    config:
+      files:
+      - entity: order_details
+        file: order_details.csv
+  loaders:
+  - name: target-jsonl
+    variant: andyh1203
+    pip_url: target-jsonl
+    config:
+      destination_path: ../data/csv/data.json
+  - name: target-postgres
+    variant: meltanolabs
+    pip_url: meltanolabs-target-postgres
+    config:
+      host: localhost
+      port: 5432
+      database: northwind
+      user: northwind_user
+      password: thewindisblowing
